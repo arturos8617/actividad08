@@ -80,7 +80,6 @@ class Lista_ligada():
                 while(temp):
                     lista.append(temp.dato.to_dict())
                     temp = temp.siguiente
-                print(lista)
                 json.dump(lista, archivo, indent=1)
             return 1
 
