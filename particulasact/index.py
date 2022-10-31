@@ -13,13 +13,34 @@ class Nodo():
 
 
 class Lista_ligada():
-    nodo_inicial = None
-    nodo_final = None
-    no_elements = 0
 
     def __init__(self):
         self.nodo_inicial = None
         self.nodo_final = None
+        self.no_elements = 0
+
+    def __str__(self):
+        temp = self.nodo_inicial
+        array = []
+        while(temp):
+            array.append(str(temp.dato))
+            temp = temp.siguiente
+        return "".join(array)
+
+    def __len__(self):
+        return self.no_elements
+
+    def __iter__(self):
+        self.itertemp = self.nodo_inicial
+        return self
+
+    def __next__(self):
+        if(self.itertemp):
+            temp = self.itertemp.dato
+            self.itertemp = self.itertemp.siguiente
+            return temp
+        else:
+            raise StopIteration
 
     def agregar_inicio(self, nodo):
         if(self.no_elements == 0):
@@ -51,14 +72,6 @@ class Lista_ligada():
             print(temp.dato)
             temp = temp.siguiente
 
-    def __str__(self):
-        temp = self.nodo_inicial
-        array = []
-        while(temp):
-            array.append(str(temp.dato))
-            temp = temp.siguiente
-        return "".join(array)
-
     def guardar(self, ubicacion):
         temp = self.nodo_inicial
         try:
@@ -67,6 +80,7 @@ class Lista_ligada():
                 while(temp):
                     lista.append(temp.dato.to_dict())
                     temp = temp.siguiente
+                print(lista)
                 json.dump(lista, archivo, indent=1)
             return 1
 

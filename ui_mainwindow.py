@@ -160,6 +160,11 @@ class Ui_MainWindow(object):
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayout_4 = QGridLayout(self.tab_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.mostrar_tabla_pushButton = QPushButton(self.tab_4)
+        self.mostrar_tabla_pushButton.setObjectName(u"mostrar_tabla_pushButton")
+
+        self.gridLayout_4.addWidget(self.mostrar_tabla_pushButton, 1, 2, 1, 1)
+
         self.search_lineEdit = QLineEdit(self.tab_4)
         self.search_lineEdit.setObjectName(u"search_lineEdit")
 
@@ -170,19 +175,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.buscar_pushButton, 1, 1, 1, 1)
 
-        self.mostrar_tabla_pushButton = QPushButton(self.tab_4)
-        self.mostrar_tabla_pushButton.setObjectName(u"mostrar_tabla_pushButton")
-
-        self.gridLayout_4.addWidget(self.mostrar_tabla_pushButton, 1, 2, 1, 1)
-
-        self.table = QListWidget(self.tab_4)
+        self.table = QTableWidget(self.tab_4)
         self.table.setObjectName(u"table")
 
         self.gridLayout_4.addWidget(self.table, 0, 0, 1, 3)
 
         self.tabWidget.addTab(self.tab_4, "")
 
-        self.gridLayout_3.addWidget(self.tabWidget, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.tabWidget, 0, 1, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -201,7 +201,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -231,10 +231,10 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Destino Y", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Id", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Agregar", None))
+        self.mostrar_tabla_pushButton.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.search_lineEdit.setText("")
         self.search_lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Id de la particula", None))
         self.buscar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
-        self.mostrar_tabla_pushButton.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Tabla", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
     # retranslateUi
