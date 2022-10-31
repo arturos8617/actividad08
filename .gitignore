@@ -1,2 +1,2 @@
-pycache/*
-particulasact/pycache/*
+__pycache__/
+particulasact/__pycache__/
